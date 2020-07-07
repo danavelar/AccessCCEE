@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BM/v1" xmlns:bo1="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BM/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd29.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:complexType name="ListarMedidaResponse">
+    <xsd:annotation>
+      <xsd:documentation>Resposta da operação listar contrato</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="medidas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="medida" type="bo1:Medida" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listarMedidaResponse" type="tns:ListarMedidaResponse" />
+</xsd:schema>

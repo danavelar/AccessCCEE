@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="StatusMedida">
+    <xsd:annotation>
+      <xsd:documentation>Tipos de valores relacionados à hora de início</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="HCC" />
+      <xsd:enumeration value="HCI" />
+      <xsd:enumeration value="HEC" />
+      <xsd:enumeration value="HEI" />
+      <xsd:enumeration value="HIF" />
+      <xsd:enumeration value="HE" />
+      <xsd:enumeration value="HEE" />
+      <xsd:enumeration value="HEA" />
+      <xsd:enumeration value="HR" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

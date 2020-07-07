@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd9.xsd" />
+  <xsd:simpleType name="TipoAgentePonto">
+    <xsd:annotation>
+      <xsd:documentation>Patamar de carga</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AGENTE_MEDICAO" />
+      <xsd:enumeration value="AGENTE_CONECTANTE" />
+      <xsd:enumeration value="AGENTE_CONECTADO" />
+      <xsd:enumeration value="AGENTE_PENALIDADE" />
+      <xsd:enumeration value="AGENTE_CONTRATO_USO_FIO" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AgenteRelacionado">
+    <xsd:annotation>
+      <xsd:documentation>Relação entre o Agente e o Ponto de Medição</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="agente" type="tns:Agente">
+        <xsd:annotation>
+          <xsd:documentation>Agente de mercado que se relaciona com ponto de medição.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoRelacao" type="tns:TipoAgentePonto">
+        <xsd:annotation>
+          <xsd:documentation>Relação entre o Agente e o ponto de medição.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PontoMedicao">
+    <xsd:annotation>
+      <xsd:documentation>Ponto de medição</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigo" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Código estruturado do ponto de medição com 14 posições.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="chave" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Chave interna da entidade no sistema de origem.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Nome do ponto de medição.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="agentesRelacionados">
+        <xsd:complexType>
+          <xsd:annotation>
+            <xsd:documentation>Representação da relação entre um ponto de medição e os Agentes.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="agenteRelacionado" type="tns:AgenteRelacionado">
+              <xsd:annotation>
+                <xsd:documentation>Agente relacionado.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="26d91cd3-5f92-4afb-845c-a67a31843f68" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ListarMedidaBSv1.xsd" MetadataType="Schema" ID="aa4ffb59-3660-4e17-a66a-a69ba215000a" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd14.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv11.xsd" MetadataType="Schema" ID="80e700ec-9b8c-4e33-9e09-14e739989240" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd13.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv12.xsd" MetadataType="Schema" ID="8498f55e-7bc5-4440-bb62-a0409ac49232" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd25.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv13.xsd" MetadataType="Schema" ID="7f10bd34-b460-4105-b00a-bdc7e077254f" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd12.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv14.xsd" MetadataType="Schema" ID="a447f224-d3ad-4d9f-a8a3-e2662f25bacb" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd20.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv15.xsd" MetadataType="Schema" ID="8d70f911-7f07-4a99-8ccc-7e64eec83f67" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd29.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv16.xsd" MetadataType="Schema" ID="0f1dfc47-fd1c-4e75-b3c8-5ff207d3f534" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd2.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv17.xsd" MetadataType="Schema" ID="2e5922fe-6be8-4984-9ae0-fd4f51648308" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd10.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv18.xsd" MetadataType="Schema" ID="559947cc-3439-48b2-bf1a-185824ed7678" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd3.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv19.xsd" MetadataType="Schema" ID="3a23b556-c5d4-4753-a15a-e1546c8461dd" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd18.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv110.xsd" MetadataType="Schema" ID="0a0dd1bb-88f2-4efa-9d71-660b57f6e228" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd28.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv111.xsd" MetadataType="Schema" ID="b4a2e01a-db24-407e-b5ad-d3d3e16292f2" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd31.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv112.xsd" MetadataType="Schema" ID="44294ca2-94c9-4d94-adcb-9b47eaa5a68f" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd27.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv113.xsd" MetadataType="Schema" ID="fe465573-fc6d-44ce-9b41-448dccdefed6" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd8.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv114.xsd" MetadataType="Schema" ID="5cb6ef91-11cf-4dc1-8154-2e937411dc6a" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd15.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv115.xsd" MetadataType="Schema" ID="fdfc2fb9-8d00-4562-972a-305ae82b8802" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd21.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv116.xsd" MetadataType="Schema" ID="d19e0eec-1950-44b1-9cb5-8e01e8ab7c0d" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd26.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv117.xsd" MetadataType="Schema" ID="e54ab026-d024-49d7-b514-1bfbcdeb40f5" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd17.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv118.xsd" MetadataType="Schema" ID="be970040-a789-4a18-a933-a1271a8997c1" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd34.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv119.xsd" MetadataType="Schema" ID="a87f7d32-2638-404e-b0d3-6aae5c8c2273" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd33.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv1.wsdl" MetadataType="Wsdl" ID="51131ca8-ef49-49e8-9663-238dfcbed39d" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1?wsdl" />
+    <MetadataFile FileName="ListarMedidaBSv120.xsd" MetadataType="Schema" ID="2320c087-a8ae-4d77-ad6f-1c0f73c24f22" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd4.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv121.xsd" MetadataType="Schema" ID="46cd2d52-f283-4ad1-9fcb-b4029d3fee3b" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd6.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv122.xsd" MetadataType="Schema" ID="8eb16cee-3682-4999-a2e0-e1614c630756" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd9.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv123.xsd" MetadataType="Schema" ID="6be5e738-8e74-4dad-b030-54392b42ce95" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd11.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv124.xsd" MetadataType="Schema" ID="55e044db-c4bb-460c-8ffb-7f72cde02fd8" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd32.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv125.xsd" MetadataType="Schema" ID="3c18b860-8410-4de3-9c6e-e12279dcc44d" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd16.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv126.xsd" MetadataType="Schema" ID="e61cf435-2b61-40a4-b8c5-d4c7bd864a01" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd24.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv127.xsd" MetadataType="Schema" ID="0a478fc0-5a07-4015-bcd9-8e656fca2096" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd23.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv128.xsd" MetadataType="Schema" ID="38613158-7fdf-49e2-8e63-c6fd455732a6" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd22.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv129.xsd" MetadataType="Schema" ID="7f311935-01ed-4a2d-860e-fc59f7093fde" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd7.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv130.xsd" MetadataType="Schema" ID="e6092c9e-fd20-4b46-8216-d922f289e894" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd19.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv131.xsd" MetadataType="Schema" ID="661d2947-4a9f-4d60-861d-8fc38ea5679d" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd30.xsd" />
+    <MetadataFile FileName="ListarMedidaBSv132.xsd" MetadataType="Schema" ID="1dc2d7ef-28ee-4e7a-8847-95509bfc4f1f" SourceId="1" SourceUrl="https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1.xsd5.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
