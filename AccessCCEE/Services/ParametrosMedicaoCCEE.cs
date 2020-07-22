@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AccessCCEE.Services
+namespace ApiServiceCCEE.Services
 {
     public class ParametrosMedicaoCCEE : ParametrosConexaoCCEE
     {

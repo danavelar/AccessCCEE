@@ -1,22 +1,26 @@
 ﻿using System;
 using System.ServiceModel;
-using AccessCCEE.wsListarMedida;
+using wsccee = AccessCCEE.wsListarMed;
 
-namespace AccessCCEE.Services
+namespace ApiServiceCCEE.Services
 {
     public class MedicaoPlataformaCCEE
     {
         // tipoMedicao: C=Completa, F=Faltante
-        public void ListarMedicaoCCEEAsync()
+        public wsccee.ListarMedidaResponse ListarMedicaoCCEE(string path)
         {
-            ParametrosMedicaoCCEE param = MontarParametrosMedicao(1, "18994", DateTime.Now, DateTime.Now);
-            MessageHeaderType hd = new MessageHeaderType();
+            ParametrosMedicaoCCEE param = MontarParametrosMedicao(1, "18994", DateTime.Parse("01/05/2020"), DateTime.Parse("03/05/2020"), path);
+            param.TipoMedicao = "C";
+            param.CodigoMedidorCCEE = "SPAVN-URPAR03";
+            wsccee.ListarMedidaResponse resposta;
+
+            wsccee.MessageHeaderType hd = new wsccee.MessageHeaderType();
             try
             {
                 BasicHttpBinding binding = ConectarCCEE.GetBindingCCEE(param);
                 binding.MaxReceivedMessageSize = 327680;
                 // criar proxy para listar medições (proxy);
-                ListarMedidaBSv1PortTypeClient client = new ListarMedidaBSv1PortTypeClient(binding, ConectarCCEE.GetEndPointAdress(param.URLService));
+                wsccee.ListarMedidaBSv1PortTypeClient client = new wsccee.ListarMedidaBSv1PortTypeClient(binding, ConectarCCEE.GetEndPointAdress(param.URLService));
                 
                 // setar os certificados no proxy
                 var certificates = ConectarCCEE.GetCertificadosCCEE(param);
@@ -25,40 +29,40 @@ namespace AccessCCEE.Services
 
                 hd.codigoPerfilAgente = param.CodigoPerfilAgente;
 
-                SecurityHeaderType sh = new SecurityHeaderType();
-                UsernameTokenType tp = new UsernameTokenType();
+                wsccee.SecurityHeaderType sh = new wsccee.SecurityHeaderType();
+                wsccee.UsernameTokenType tp = new wsccee.UsernameTokenType();
                 tp.Username = param.UsuarioAcesso;
                 tp.Password = param.SenhaAcesso;
                 sh.UsernameToken = tp;
 
                 // objeto a ser enviado;
-                ListarMedidaRequest req = new ListarMedidaRequest();
+                wsccee.ListarMedidaRequest req = new wsccee.ListarMedidaRequest();
                 // para solicitar medição faltante;
                 if (param.TipoMedicao == "F")
                 {
-                    Medidor med = new Medidor();
+                    wsccee.Medidor med = new wsccee.Medidor();
                     med.codigo = param.CodigoMedidorCCEE;
                     req.medidor = med;
-                    req.tipoMedida = TipoMedida.FALTANTES;
+                    req.tipoMedida = wsccee.TipoMedida.FALTANTES;
                     req.tipoMedidaSpecified = true;
                 }
 
                 // para solicitar medição consolidada;
                 if (param.TipoMedicao == "C")
                 {
-                    req.tipoMedida = TipoMedida.FINAL;
+                    req.tipoMedida = wsccee.TipoMedida.FINAL;
                     req.tipoMedidaSpecified = true;
 
                     //                    req.tipoMedicao = wsccee.TipoMedicao.COLETA;
                     //                    req.tipoMedicaoSpecified = true;
 
-                    PontoMedicao pmed = new PontoMedicao();
+                    wsccee.PontoMedicao pmed = new wsccee.PontoMedicao();
                     pmed.codigo = param.CodigoMedidorCCEE;
                     req.pontoMedicao = pmed;
                 }
 
                 // DEFINIÇÃO DO PERIODO PARA PESQUISAR OS DADOS;
-                Periodo per = new Periodo();
+                wsccee.Periodo per = new wsccee.Periodo();
                 per.inicio = param.PeriodoDataInicial;
                 per.inicioSpecified = true;
                 per.fim = param.PeriodoDataFinal;
@@ -66,27 +70,25 @@ namespace AccessCCEE.Services
                 req.periodo = per;
 
 
-                var res = client.listarMedida(sh, ref hd, req);
-                if (res != null)
-                {
-
-                }
+                resposta = client.listarMedida(sh, ref hd, req);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
+            return resposta;
         }
 
         // Montar os parâmetros necessários para acessar a palataforma da CCEE;
-        private static ParametrosMedicaoCCEE MontarParametrosMedicao(int CodigoEmpresa, string perfilAgente, DateTime dataInicial, DateTime dataFinal)
+        private static ParametrosMedicaoCCEE MontarParametrosMedicao(int CodigoEmpresa, string perfilAgente, DateTime dataInicial, DateTime dataFinal, string path)
         {
             ParametrosMedicaoCCEE parm = new ParametrosMedicaoCCEE();
 
             if (CodigoEmpresa == 1)
             {
                 // Dados para Delta
-                parm.CertCliente = @"chaveEnviadaCCEE.p12";
+                parm.CertCliente = path + "\\ChaveEnviadaParaCCEE.p12";
                 parm.CertClientePwd = "Delta@123";
                 parm.UsuarioAcesso = "DELTA_ENERGIA";
                 parm.SenhaAcesso = "49817018";
@@ -102,10 +104,10 @@ namespace AccessCCEE.Services
                 //parm.SenhaAcesso = ;
             }
 
-            parm.CertServer = @"servicoscceeorgbr.crt";
+            parm.CertServer = path + "\\servicoscceeorgbr.crt";
             parm.CodigoPerfilAgente = perfilAgente;
             parm.BindingName = "ListarMedidaBSv1SOAPBinding";
-            parm.URLService = @"https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1?wsdl";
+            parm.URLService = @"https://servicos.ccee.org.br:443/ws/medc/ListarMedidaBSv1";
             parm.PeriodoDataInicial = dataInicial;
 
             // sempre definir como data final o horario de 23:59:59

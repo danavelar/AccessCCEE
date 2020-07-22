@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd22.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd23.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd24.xsd" />
+  <xsd:complexType name="Organizacao">
+    <xsd:annotation>
+      <xsd:documentation>Organização na qual uma parte pertente</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigo" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="razaoSocial" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="sigla" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="cnpj" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="segmentoMercado" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipo" type="tns:TipoOrganizacao" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="status" type="tns:StatusOrganizacao" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="site" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="enderecos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="endereco" type="tns:EnderecoPostal" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

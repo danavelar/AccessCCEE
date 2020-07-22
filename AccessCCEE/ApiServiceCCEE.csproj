@@ -33,7 +33,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -161,8 +161,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\wsListarMed\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ListMeasurementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,6 +191,21 @@
     <None Include="Connected Services\wsListarMedida\configuration91.svcinfo" />
     <None Include="Connected Services\wsListarMedida\configuration.svcinfo" />
     <None Include="Connected Services\wsListarMedida\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\wsListarMed\AccessCCEE.wsListarMed.ListarMedidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\wsListarMed\AccessCCEE.wsListarMed.listarMedidaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\wsListarMed\AccessCCEE.wsListarMed.MessageHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\wsListarMed\configuration91.svcinfo" />
+    <None Include="Connected Services\wsListarMed\configuration.svcinfo" />
+    <None Include="Connected Services\wsListarMed\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -317,6 +337,107 @@
     <None Include="Connected Services\wsListarMedida\ListarMedidaBSv19.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv1.wsdl" />
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv110.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv111.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv112.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv113.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv114.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv115.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv116.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv117.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv118.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv119.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv120.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv121.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv122.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv123.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv124.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv125.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv126.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv127.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv128.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv129.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv130.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv131.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv132.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\wsListarMed\ListarMedidaBSv19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -337,8 +458,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Services\ChaveEnviadaCCEE.p12" />
-    <Content Include="Services\servicoscceeorgbr.crt" />
+    <Content Include="Services\ChaveEnviadaParaCCEE.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Services\servicoscceeorgbr.crt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +503,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\wsListarMedida\" />
+    <WCFMetadataStorage Include="Connected Services\wsListarMed\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd27.xsd" />
+  <xsd:complexType name="ContaBancaria">
+    <xsd:annotation>
+      <xsd:documentation>Conjunto de informações referentes a uma conta Bancária</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="numero" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="digitoVerificador" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="agencia" type="tns:Agencia" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="descricaoConta" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

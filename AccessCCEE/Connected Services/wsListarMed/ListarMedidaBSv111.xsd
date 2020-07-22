@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="CodigoUnidadeMedida">
+    <xsd:annotation>
+      <xsd:documentation>Unidade Medida</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="KWh" />
+      <xsd:enumeration value="MWh" />
+      <xsd:enumeration value="MWm" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="UnidadeMedida">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="valor" type="xsd:decimal" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigo" type="tns:CodigoUnidadeMedida" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/FM" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/FM" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd32.xsd" />
+  <xsd:complexType name="InvalidParametersFault">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:BusinessFault" />
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="invalidParametersFault" type="tns:InvalidParametersFault" />
+</xsd:schema>

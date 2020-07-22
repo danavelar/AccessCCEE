@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="fonteEnergia" type="tns:FonteEnergia" />
+  <xsd:complexType name="FonteEnergia">
+    <xsd:annotation>
+      <xsd:documentation>Conjunto de informacoes referentes a Fonte de Energia</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigo" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="descricao" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="sigla" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

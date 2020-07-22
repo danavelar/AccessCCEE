@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd17.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd16.xsd" />
+  <xsd:complexType name="Banco">
+    <xsd:annotation>
+      <xsd:documentation>Conjunto de informações referentes a um Banco</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:Organizacao">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="numero" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="assinaturaEletronica" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dataAdesaoAssinaturaBiometrica" type="tns:Periodo" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

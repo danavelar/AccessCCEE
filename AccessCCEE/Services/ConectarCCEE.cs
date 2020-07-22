@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Web.Http;
 
-namespace AccessCCEE.Services
+namespace ApiServiceCCEE.Services
 {
     public class ConectarCCEE
     {
@@ -49,12 +49,12 @@ namespace AccessCCEE.Services
                 var serverCertificate = param.CertServer;
                 var serverCertificatePassword = param.CertServerPwd;
 
-                var filePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\ChaveEnviadaParaCCEE.p12";
-                var serverCertificatePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\servicoscceeorgbr.crt";
+                //var filePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\ChaveEnviadaParaCCEE.p12";
+                //var serverCertificatePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\servicoscceeorgbr.crt";
 
                 // montar os certificados;
-                var certificates = new X509Certificate2Collection(new X509Certificate2(filePath, clientCertificatePassword, X509KeyStorageFlags.PersistKeySet));
-                certificates.Add(new X509Certificate2(serverCertificatePath, serverCertificatePassword, X509KeyStorageFlags.PersistKeySet));
+                var certificates = new X509Certificate2Collection(new X509Certificate2(clientCertificate, clientCertificatePassword, X509KeyStorageFlags.PersistKeySet));
+                certificates.Add(new X509Certificate2(serverCertificate, serverCertificatePassword, X509KeyStorageFlags.PersistKeySet));
                 return certificates;
             }
             catch (Exception ex)

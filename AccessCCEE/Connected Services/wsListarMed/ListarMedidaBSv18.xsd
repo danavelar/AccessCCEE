@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BM/v1" xmlns:bo1="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BM/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd9.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd10.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd11.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd12.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd13.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd14.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd15.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:import schemaLocation="ListarMedidaBSv1.xsd16.xsd" namespace="http://xmlns.energia.org.br/BO/v1" />
+  <xsd:complexType name="ListarMedidaRequest">
+    <xsd:annotation>
+      <xsd:documentation>Requisição da operação listar contrato</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="relacionamentoAgentePonto" type="bo1:TipoRelacionamentoAgentePontoMedicao" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="pontoMedicao" type="bo1:PontoMedicao" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="medidor" type="bo1:Medidor" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoMedida" type="bo1:TipoMedida" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="tipoMedicao" type="bo1:TipoMedicao" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="statusMedida" type="bo1:StatusMedida" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="periodo" type="bo1:Periodo" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listarMedida" type="tns:ListarMedidaRequest" />
+</xsd:schema>

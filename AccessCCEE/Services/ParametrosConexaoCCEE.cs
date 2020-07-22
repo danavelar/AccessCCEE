@@ -1,4 +1,4 @@
-﻿namespace AccessCCEE.Services
+﻿namespace ApiServiceCCEE.Services
 {
     public class ParametrosConexaoCCEE
     {

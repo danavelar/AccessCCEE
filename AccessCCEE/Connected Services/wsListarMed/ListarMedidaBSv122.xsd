@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd17.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd16.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd18.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd19.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd20.xsd" />
+  <xsd:include schemaLocation="ListarMedidaBSv1.xsd21.xsd" />
+  <xsd:complexType name="Agente">
+    <xsd:annotation>
+      <xsd:documentation>Agente - empresas que atuam no setor de energia elétrica nas áreas de geração, distribuição e comercialização. Há
+				ainda os consumidores livres e consumidores especiais, conceitos associados à demanda e também à fonte de geração de energia</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:Organizacao">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="categoria" type="tns:Categoria" />
+          <xsd:element minOccurs="0" name="classe" type="tns:Classe" />
+          <xsd:element minOccurs="0" name="representante" type="tns:Agente" />
+          <xsd:element minOccurs="0" name="habilitaRepresentacao" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="vigencia" type="tns:Periodo" />
+          <xsd:element minOccurs="0" name="operacao" type="tns:Periodo" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="perfis">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="perfilAgente" type="tns:Agente" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="comercializadorVarejista" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="perfilPrincipal" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dadosBancarios">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="contaBancaria" type="tns:ContaBancaria" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="1" name="fonteEnergia" type="tns:FonteEnergia" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

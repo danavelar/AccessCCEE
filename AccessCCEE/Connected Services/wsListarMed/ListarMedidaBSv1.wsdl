@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ns0="http://xmlns.energia.org.br/BS/v1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://xmlns.energia.org.br/BS/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd2.xsd" namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd3.xsd" namespace="http://xmlns.energia.org.br/BM/v1" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd4.xsd" namespace="http://xmlns.energia.org.br/BM/v1" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd32.xsd" namespace="http://xmlns.energia.org.br/FM" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd33.xsd" namespace="http://xmlns.energia.org.br/FM" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd34.xsd" namespace="http://xmlns.energia.org.br/FM" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd5.xsd" namespace="http://xmlns.energia.org.br/FM" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd6.xsd" namespace="http://xmlns.energia.org.br/FM" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd7.xsd" namespace="http://xmlns.energia.org.br/FM" />
+      <xsd:import schemaLocation="ListarMedidaBSv1.xsd8.xsd" namespace="http://xmlns.energia.org.br/MH/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="InvalidParametersFaultMessage">
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/FM" name="invalidParametersFault" element="xsns:invalidParametersFault" />
+  </wsdl:message>
+  <wsdl:message name="ListarMedidaRequestMessage">
+    <wsdl:part xmlns:xsns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" name="Security" element="xsns:Security" />
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/MH/v1" name="MessageHeader" element="xsns:messageHeader" />
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/BM/v1" name="listarMedida" element="xsns:listarMedida" />
+  </wsdl:message>
+  <wsdl:message name="ListarMedidaResponseMessage">
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/MH/v1" name="MessageHeader" element="xsns:messageHeader" />
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/BM/v1" name="listarMedidaResponse" element="xsns:listarMedidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnexpectedSchemaFaultMessage">
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/FM" name="unexpectedSchemaFault" element="xsns:unexpectedSchemaFault" />
+  </wsdl:message>
+  <wsdl:message name="UnexpectedTechnicalFaultMessage">
+    <wsdl:part xmlns:xsns="http://xmlns.energia.org.br/FM" name="unexpectedTechnicalFault" element="xsns:unexpectedTechnicalFault" />
+  </wsdl:message>
+  <wsdl:portType name="ListarMedidaBSv1PortType">
+    <wsdl:operation name="listarMedida">
+      <wsdl:input name="listarMedidaRequest" message="ns0:ListarMedidaRequestMessage" />
+      <wsdl:output name="listarMedidaResponse" message="ns0:ListarMedidaResponseMessage" />
+      <wsdl:fault name="InvalidParametersFaultMessage" message="ns0:InvalidParametersFaultMessage" />
+      <wsdl:fault name="UnexpectedTechnicalFaultMessage" message="ns0:UnexpectedTechnicalFaultMessage" />
+      <wsdl:fault name="UnexpectedSchemaFaultMessage" message="ns0:UnexpectedSchemaFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ListarMedidaBSv1SOAPBinding" type="ns0:ListarMedidaBSv1PortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listarMedida">
+      <soap11:operation soapAction="listarMedida" style="document" />
+      <wsdl:input name="listarMedidaRequest">
+        <soap11:body use="literal" parts="listarMedida" />
+        <soap11:header message="ns0:ListarMedidaRequestMessage" part="Security" use="literal" />
+        <soap11:header message="ns0:ListarMedidaRequestMessage" part="MessageHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listarMedidaResponse">
+        <soap11:body use="literal" parts="listarMedidaResponse" />
+        <soap11:header message="ns0:ListarMedidaResponseMessage" part="MessageHeader" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParametersFaultMessage">
+        <soap11:fault use="literal" name="InvalidParametersFaultMessage" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnexpectedTechnicalFaultMessage">
+        <soap11:fault use="literal" name="UnexpectedTechnicalFaultMessage" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnexpectedSchemaFaultMessage">
+        <soap11:fault use="literal" name="UnexpectedSchemaFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ListarMedidaBSv1">
+    <wsdl:port name="ListarMedidaBSv1SOAPPort" binding="ns0:ListarMedidaBSv1SOAPBinding">
+      <soap11:address location="https://servicos.ccee.org.br:443/ws/medc/ListarMedidaBSv1" />
+    </wsdl:port>
+    <wsdl:port name="ListarMedidaBSv1SOAPPort.0" binding="ns0:ListarMedidaBSv1SOAPBinding">
+      <soap11:address location="https://servicos.ccee.org.br:443/ws/medc/ListarMedidaBSv1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

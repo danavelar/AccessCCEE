@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://xmlns.energia.org.br/BO/v1" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.energia.org.br/BO/v1" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="StatusOrganizacao">
+    <xsd:annotation>
+      <xsd:documentation>Status da Organização</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ADERIDO" />
+      <xsd:enumeration value="ATIVADO" />
+      <xsd:enumeration value="DESATIVADO" />
+      <xsd:enumeration value="DESLIGADO" />
+      <xsd:enumeration value="EM_ADESAO" />
+      <xsd:enumeration value="OUTROS" />
+      <xsd:enumeration value="PROCESSO_ADESAO_CANCELADO" />
+      <xsd:enumeration value="SUSPENSO" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
