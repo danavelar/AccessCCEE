@@ -9,7 +9,7 @@ namespace AccessCCEE.Services
         // tipoMedicao: C=Completa, F=Faltante
         public void ListarMedicaoCCEEAsync()
         {
-            ParametrosMedicaoCCEE param = MontarParametrosMedicao(1, "1", DateTime.Now, DateTime.Now);
+            ParametrosMedicaoCCEE param = MontarParametrosMedicao(1, "18994", DateTime.Now, DateTime.Now);
             MessageHeaderType hd = new MessageHeaderType();
             try
             {
@@ -87,7 +87,7 @@ namespace AccessCCEE.Services
             {
                 // Dados para Delta
                 parm.CertCliente = @"chaveEnviadaCCEE.p12";
-                parm.CertClientePwd = "1234";
+                parm.CertClientePwd = "Delta@123";
                 parm.UsuarioAcesso = "DELTA_ENERGIA";
                 parm.SenhaAcesso = "49817018";
             }
@@ -105,7 +105,7 @@ namespace AccessCCEE.Services
             parm.CertServer = @"servicoscceeorgbr.crt";
             parm.CodigoPerfilAgente = perfilAgente;
             parm.BindingName = "ListarMedidaBSv1SOAPBinding";
-            parm.URLService = @"https://servicos.ccee.org.br:443/ws/medc/ListarMedidaBSv1";
+            parm.URLService = @"https://servicos.ccee.org.br:442/ws/medc/ListarMedidaBSv1?wsdl";
             parm.PeriodoDataInicial = dataInicial;
 
             // sempre definir como data final o horario de 23:59:59

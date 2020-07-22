@@ -49,7 +49,7 @@ namespace AccessCCEE.Services
                 var serverCertificate = param.CertServer;
                 var serverCertificatePassword = param.CertServerPwd;
 
-                var filePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\ChaveEnviadaCCEE.p12";
+                var filePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\ChaveEnviadaParaCCEE.p12";
                 var serverCertificatePath = @"C:\Users\davelar\source\repos\AccessCCEE\AccessCCEE\Services\servicoscceeorgbr.crt";
 
                 // montar os certificados;
